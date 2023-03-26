@@ -122,10 +122,10 @@ def select_model(args, device):
         # model = RFDN()
         # model.load_state_dict(torch.load(model_path), strict=True)
     elif model_id == 12:
-        from models.team11_EDT import edict
-        name, data_range = f"{model_id:12}_swinir_baseline", 255.0
+        from models.team12_swinir import SwinIR
+        name, data_range = f"{model_id:12}_swinir_baseline", 1.0
         model_path = os.path.join('model_zoo', 'team12_swinir.pth')
-        model = Network(config)
+        model = SwinIR()
         model.load_state_dict(torch.load(model_path), strict=True)
 
         # # SwinIR baseline, ICCVW 2021
